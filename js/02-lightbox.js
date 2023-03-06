@@ -17,24 +17,11 @@ const markup = galleryItems
   .join("");
 
 galleryEl.innerHTML = markup;
-// galleryEl.insertAdjacentHTML("afterbegin", markup);
 
-galleryEl.addEventListener("click", handleGalleryClick);
-
-function handleGalleryClick(event) {
-  event.preventDefault();
-
-  if (event.target.nodeName !== "IMG") {
-    return;
-  }
-
-  const imageEl = event.target.dataset.source;
-
-  const lightbox = new SimpleLightbox(".gallery a", {
-    caption: true,
-    captionDelay: 250,
-    captionsData: "alt",
-  });
-}
+const lightbox = new SimpleLightbox(".gallery a", {
+  caption: true,
+  captionDelay: 250,
+  captionsData: "alt",
+});
 
 console.log(galleryItems);

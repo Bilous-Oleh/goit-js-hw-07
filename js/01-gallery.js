@@ -16,8 +16,7 @@ const markup = galleryItems
   .map((element) => makeImageGalleryCard(element))
   .join("");
 
-galleryEl.innerHTML = markup;
-// galleryEl.insertAdjacentHTML("afterbegin", markup);
+galleryEl.insertAdjacentHTML("afterbegin", markup);
 
 galleryEl.addEventListener("click", handleGalleryClick);
 
